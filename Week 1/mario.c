@@ -1,32 +1,30 @@
+#include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
-	int n;
-	scanf("%d",&n);
-    int i,j,k;
-    int temp = n-1;
-    for(i=1;i<=n;i++)
+    int n;
+    do 
     {
-    	for(j=temp;j>0;j--)
-    	{
-    		printf(" ");
-    	}
-    	temp--;
-    	for(k=1;k<=i;k++)
-    	{
-    		printf("#");
-    	}
-    	printf("  ");
-    	for(k=1;k<=i;k++)
-    	{
-    		printf("#");
-    	}
-    	for(j=n-1;j>0;j--)
-    	{
-    		printf(" ");
-    	}
-    	printf("\n");
+        printf("Height: ");
+        n = GetInt();   
     }
-    return 0;
+    while (n > 23 || n < 0);
+    
+    int i;
+    for (i = 0; i < n; i++)
+    {
+        int m;
+        for (m = n-i-1; m > 0; m--)       
+        {
+            printf(" ");            
+        }
+        int k;
+        for (k = 0; k < i+2; k++)       
+        {
+            printf("#");            
+        }
+        printf("\n");
+    }
 }
